@@ -1,0 +1,12 @@
+---
+python_packages_distro:
+  - python
+  - python-devel
+  - python-pip
+  - python-setuptools
+  - python-virtualenv
+  - python34
+  - python34-devel
+  - python34-pip
+  - python34-setuptools
+  - python34-virtualenv

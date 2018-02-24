@@ -1,2 +1,2 @@
 ---
-# vars file for python-install
+python_packages: '{{ python_packages_distro }}'

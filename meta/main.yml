@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: Linux Foundation Release Engineering
+  description: Install Distro specific Python binaries + pyenv to install
+    multiple versions of Python.
+  company: The Linux Foundation
+  issue_tracker_url: https://jira.linuxfoundation.org
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - xenial
+
+  galaxy_tags:
+    - pyenv
+    - python
+    - system
+
+dependencies: []

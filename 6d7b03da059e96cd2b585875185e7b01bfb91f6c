@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0bcd3616_e0d720e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-09-19T17:29:17Z",
+      "side": 1,
+      "message": "Hmm I see how that\u0027s confusing.  On 18.04 we skip the py34 install, so later in the script it assumes it\u0027s installed and fails on the pyenv global system command.",
+      "parentUuid": "fa9c32dd_dfdada4b",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "6d7b03da059e96cd2b585875185e7b01bfb91f6c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e7eda7b_bad99d89",
         "filename": "tasks/main.yml",
         "patchSetId": 1

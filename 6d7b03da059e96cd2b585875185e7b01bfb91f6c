@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa9c32dd_dfdada4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-09-19T17:14:27Z",
+      "side": 1,
+      "message": "This sentence makes it sound like 18.04 was failing because it was skipping py34, but is actually failing because is trying to install it, right?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "6d7b03da059e96cd2b585875185e7b01bfb91f6c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7eda7b_bad99d89",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-09-19T17:14:27Z",
+      "side": 1,
+      "message": "This is the command that was failing .. wasn\u0027t it?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 51
+      },
+      "revId": "6d7b03da059e96cd2b585875185e7b01bfb91f6c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

@@ -13,7 +13,7 @@
 - name: Check pyenv global command
   set_fact:
     pyenv_command: 'pyenv global system {{python36_version}} {{python35_version}}'
-  when: ansible_distribution_version != '18.04'
+  when: ansible_distribution_version == '18.04'
 
 - name: Install Python via pyenv
   environment:

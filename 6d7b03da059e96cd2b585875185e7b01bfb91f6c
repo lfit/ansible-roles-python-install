@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "769f20c1_076dfb93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-09-19T17:42:00Z",
+      "side": 1,
+      "message": "Ah!! thanks for clarifying",
+      "parentUuid": "0bcd3616_e0d720e4",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "6d7b03da059e96cd2b585875185e7b01bfb91f6c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e7eda7b_bad99d89",
         "filename": "tasks/main.yml",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "No this command is skipped on Ubuntu 18.04.",
       "parentUuid": "2e7eda7b_bad99d89",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 51
+      },
+      "revId": "6d7b03da059e96cd2b585875185e7b01bfb91f6c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd867977_ea4ed099",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-09-19T17:42:00Z",
+      "side": 1,
+      "message": "Got it.. thanks!",
+      "parentUuid": "b9d91956_6c690f0e",
       "range": {
         "startLine": 26,
         "startChar": 0,

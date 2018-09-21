@@ -23,4 +23,5 @@ galaxy_info:
     - python
     - system
 
-dependencies: []
+dependencies:
+  - role: lf-dev-libs

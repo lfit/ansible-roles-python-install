@@ -1,5 +1,6 @@
 ---
 python_packages_distro:
+  - libffi-devel
   - python
   - python-devel
   - python-pip

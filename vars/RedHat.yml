@@ -10,3 +10,4 @@ python_packages_distro:
   - python34-pip
   - python34-setuptools
   - python34-virtualenv
+  - libffi-devel

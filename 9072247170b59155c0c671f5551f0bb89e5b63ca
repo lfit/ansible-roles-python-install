@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2233388f_5c4014a1",
+        "filename": "meta/main.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-23T23:25:12Z",
+      "side": 0,
+      "message": "Why\u0027s this being removed?",
+      "revId": "9072247170b59155c0c671f5551f0bb89e5b63ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

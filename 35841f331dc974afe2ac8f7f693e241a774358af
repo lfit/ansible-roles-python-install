@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4d78bca_74b78944",
+        "filename": "vars/Debian.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-24T11:42:35Z",
+      "side": 1,
+      "message": "please add asciibetically",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "35841f331dc974afe2ac8f7f693e241a774358af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ae3f9a8_69475baf",
+        "filename": "vars/RedHat.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-24T11:42:35Z",
+      "side": 1,
+      "message": "please add asciibetically",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 16
+      },
+      "revId": "35841f331dc974afe2ac8f7f693e241a774358af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

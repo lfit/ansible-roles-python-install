@@ -1,0 +1,8 @@
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Submitted-by: Jeremy Phelps <jphelps@linuxfoundation.org>
+Submitted-at: Mon, 14 Jan 2019 22:18:52 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/14181
+Project: ansible/roles/python-install
+Branch: refs/heads/master

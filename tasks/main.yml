@@ -12,32 +12,32 @@
 
 - name: Check pyenv global command
   set_fact:
-    pyenv_command: 'pyenv global system {{python37_version}} {{python36_version}} {{python35_version}}'
+    pyenv_command: 'pyenv global system {{ python37_version }} {{ python36_version }} {{ python35_version }}'
   when: ansible_distribution_version == '18.04'
 
 - name: Install Python via pyenv
   environment:
     PYENV_ROOT: /opt/pyenv
-    PATH: '/opt/pyenv/bin:{{ansible_env.PATH}}'
-    PYTHON34_VERSION: '{{python34_version}}'
-    PYTHON35_VERSION: '{{python35_version}}'
-    PYTHON36_VERSION: '{{python36_version}}'
-    PYTHON37_VERSION: '{{python37_version}}'
+    PATH: '/opt/pyenv/bin:{{ ansible_env.PATH }}'
+    PYTHON34_VERSION: '{{ python34_version }}'
+    PYTHON35_VERSION: '{{ python35_version }}'
+    PYTHON36_VERSION: '{{ python36_version }}'
+    PYTHON37_VERSION: '{{ python37_version }}'
   block:
-    - name: 'Install pyenv {{pyenv_version}}'
+    - name: 'Install pyenv {{ pyenv_version }}'
       git:
         repo: https://github.com/pyenv/pyenv.git
         dest: /opt/pyenv
         version: '{{pyenv_version}}'
-    - name: 'Install Python {{python34_version}}'
+    - name: 'Install Python {{ python34_version }}'
       command: pyenv install -s "$PYTHON34_VERSION"
       when: ansible_distribution_version != '18.04'
-    - name: 'Install Python {{python35_version}}'
+    - name: 'Install Python {{ python35_version }}'
       command: pyenv install -s "$PYTHON35_VERSION"
-    - name: 'Install Python {{python36_version}}'
+    - name: 'Install Python {{ python36_version }}'
       command: pyenv install -s "$PYTHON36_VERSION"
-    - name: 'Install Python {{python37_version}}'
+    - name: 'Install Python {{ python37_version }}'
       command: pyenv install -s "$PYTHON37_VERSION"
     - name: Set pyenv global
-      command: '{{pyenv_command}}'
+      command: '{{ pyenv_command }}'
   become: true

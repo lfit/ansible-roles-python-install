@@ -1,0 +1,8 @@
+---
+- name: Set python alternatives 
+  block:
+    - name: Registering python 2.7 as an alternative
+      command: alternatives --install /usr/bin/python python /usr/bin/python2 50
+    - name: Registering python 3.6 as an alternative
+      command: alternatives --install /usr/bin/python python /opt/pyenv/versions/3.6.4/bin/python3.6 60
+  become: true

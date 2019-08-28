@@ -41,3 +41,12 @@
     - name: Set pyenv global
       command: '{{ pyenv_command }}'
   become: true
+
+- name: Set python alternatives
+  block:
+    - name: Registering python 2.7 as an alternative
+      command: alternatives --install /usr/bin/python python /usr/bin/python2.7 50
+    - name: Registering python 3.6 as an alternative
+      command: alternatives --install /usr/bin/python python /opt/pyenv/versions/$PYTHON36_VERSION/bin/python3.6 60
+  when: ansible_distribution == "RedHat"
+  become: true

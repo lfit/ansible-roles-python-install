@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "495e9f1d_842fa78e",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2019-08-29T19:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd73354a_218d7e0d",
+      "range": {
+        "startLine": 38,
+        "startChar": 6,
+        "endLine": 38,
+        "endChar": 51
+      },
+      "revId": "ae2a87bf297a71cf744691d458c264c4bccf030f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fe49d8a0_ec30c581",
         "filename": "tasks/main.yml",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "ae2a87bf297a71cf744691d458c264c4bccf030f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f30ca767_b1919570",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2019-08-29T19:23:02Z",
+      "side": 1,
+      "message": "Modified",
+      "parentUuid": "fe49d8a0_ec30c581",
+      "range": {
+        "startLine": 50,
+        "startChar": 81,
+        "endLine": 50,
+        "endChar": 86
+      },
+      "revId": "ae2a87bf297a71cf744691d458c264c4bccf030f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

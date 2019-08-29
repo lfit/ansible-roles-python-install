@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd73354a_218d7e0d",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-29T18:58:06Z",
+      "side": 1,
+      "message": "We have \"$PYTHON36_VERSION\" which is dynamic.",
+      "range": {
+        "startLine": 38,
+        "startChar": 6,
+        "endLine": 38,
+        "endChar": 51
+      },
+      "revId": "ae2a87bf297a71cf744691d458c264c4bccf030f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe49d8a0_ec30c581",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-29T18:58:06Z",
+      "side": 1,
+      "message": "here you are setting a static version. this is brittle and will fail if $PYTHON36_VERSION does not match 3.6.4",
+      "range": {
+        "startLine": 50,
+        "startChar": 81,
+        "endLine": 50,
+        "endChar": 86
+      },
+      "revId": "ae2a87bf297a71cf744691d458c264c4bccf030f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

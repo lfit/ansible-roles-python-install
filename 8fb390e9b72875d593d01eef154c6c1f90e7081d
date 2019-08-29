@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "014b1839_d60151ed",
+        "filename": "tasks/Ubuntu.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-29T15:23:25Z",
+      "side": 1,
+      "message": "I don\u0027t think that Ubuntu has this problem.\nPlease confirm.",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "8fb390e9b72875d593d01eef154c6c1f90e7081d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

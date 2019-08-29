@@ -22,6 +22,30 @@
       "revId": "8fb390e9b72875d593d01eef154c6c1f90e7081d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5c27788_1ad9b264",
+        "filename": "tasks/Ubuntu.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2019-08-29T18:19:11Z",
+      "side": 1,
+      "message": "Yes, Removed it.",
+      "parentUuid": "014b1839_d60151ed",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "8fb390e9b72875d593d01eef154c6c1f90e7081d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

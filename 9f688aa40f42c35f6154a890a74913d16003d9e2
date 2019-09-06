@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b30e190_6e3d9724",
+        "filename": "tasks/main.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-06T14:35:03Z",
+      "side": 1,
+      "message": "sudo alternatives --install /usr/bin/python python /usr/bin/python2.7 50\nsudo alternatives --install /usr/bin/python python /usr/bin/python3.6 60",
+      "range": {
+        "startLine": 50,
+        "startChar": 61,
+        "endLine": 50,
+        "endChar": 112
+      },
+      "revId": "9f688aa40f42c35f6154a890a74913d16003d9e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

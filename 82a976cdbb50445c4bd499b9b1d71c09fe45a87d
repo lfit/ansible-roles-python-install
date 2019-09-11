@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f50a6a36_2cff8342",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-11T18:07:04Z",
+      "side": 1,
+      "message": "Not sure if this is a good idea but a thought, maybe we can set the priority to:\n\n* 36 for python 3.6\n* 34 for python 3.4\n* 27 for python 2.7\n\nMy thought is that the priority reflects the version name. But I can see it being a problem you didn\u0027t want the latest and greatest python version to have priority.",
+      "revId": "82a976cdbb50445c4bd499b9b1d71c09fe45a87d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

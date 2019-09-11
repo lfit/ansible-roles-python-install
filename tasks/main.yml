@@ -41,3 +41,14 @@
     - name: Set pyenv global
       command: '{{ pyenv_command }}'
   become: true
+
+- name: Set python 3.6 as default python
+  block:
+    - name: Registering python 2.7 as an alternative
+      command: alternatives --install /usr/bin/python python /usr/bin/python2.7 10
+    - name: Registering python 3.4 as an alternative
+      command: alternatives --install /usr/bin/python python /usr/bin/python3.4 20
+    - name: Registering python 3.6 as an alternative
+      command: alternatives --install /usr/bin/python python /usr/bin/python3.6 30
+  when: ansible_distribution == "RedHat"
+  become: true

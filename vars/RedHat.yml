@@ -11,3 +11,13 @@ python_packages_distro:
   - python34-pip
   - python34-setuptools
   - python34-virtualenv
+  - python35
+  - python35-devel
+  - python35-pip
+  - python35-setuptools
+  - python35-virtualenv
+  - python36
+  - python36-devel
+  - python36-pip
+  - python36-setuptools
+  - python36-virtualenv

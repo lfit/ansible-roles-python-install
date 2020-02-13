@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f7e2c1c_2ee30581",
+        "filename": "tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-13T16:27:11Z",
+      "side": 1,
+      "message": "The verify failure is due to this (as indicated in the logs). There needs to be a space here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 58,
+        "endLine": 15,
+        "endChar": 60
+      },
+      "revId": "e09bdd31e28d31b9fd5e7cec111606e24fcb60d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

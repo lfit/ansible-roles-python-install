@@ -12,7 +12,7 @@
 
 - name: Check pyenv global command
   set_fact:
-    pyenv_command: 'pyenv global system {{ python37_version }} {{ python36_version }} {{ python35_version }}'
+    pyenv_command: 'pyenv global system {{ python38_version}} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
   when: ansible_distribution_version >= '18.04'
 
 - name: Install Python via pyenv
@@ -23,6 +23,7 @@
     PYTHON35_VERSION: '{{ python35_version }}'
     PYTHON36_VERSION: '{{ python36_version }}'
     PYTHON37_VERSION: '{{ python37_version }}'
+    PYTHON38_VERSION: '{{ python38_version }}'
   block:
     - name: 'Install pyenv {{ pyenv_version }}'
       git:
@@ -38,6 +39,8 @@
       command: pyenv install -s "$PYTHON36_VERSION"
     - name: 'Install Python {{ python37_version }}'
       command: pyenv install -s "$PYTHON37_VERSION"
+    - name: 'Install Python {{ python38_version }}'
+      command: pyenv install -s "$PYTHON38_VERSION"
     - name: Set pyenv global
       command: '{{ pyenv_command }}'
   become: true

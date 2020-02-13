@@ -22,6 +22,30 @@
       "revId": "e09bdd31e28d31b9fd5e7cec111606e24fcb60d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a84c070_e3fd7381",
+        "filename": "tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 346
+      },
+      "writtenOn": "2020-02-13T20:10:18Z",
+      "side": 1,
+      "message": "i fixed this but still no bueno",
+      "parentUuid": "9f7e2c1c_2ee30581",
+      "range": {
+        "startLine": 15,
+        "startChar": 58,
+        "endLine": 15,
+        "endChar": 60
+      },
+      "revId": "e09bdd31e28d31b9fd5e7cec111606e24fcb60d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

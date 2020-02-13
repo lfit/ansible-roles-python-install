@@ -4,4 +4,6 @@ python34_version: 3.4.10
 python35_version: 3.5.7
 python36_version: 3.6.9
 python37_version: 3.7.4
-pyenv_command: 'pyenv global system {{python37_version}} {{python36_version}} {{python35_version}} {{python34_version}}'
+python38_version: 3.8.0
+
+pyenv_command: 'pyenv global system {{python38_version}} {{python37_version}} {{python36_version}} {{python35_version}} {{python34_version}}'

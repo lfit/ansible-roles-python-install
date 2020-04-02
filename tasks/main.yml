@@ -2,6 +2,8 @@
 - name: Include distro specific variables
   include_vars: "{{ item }}"
   with_first_found:
+    - '{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
+    - '{{ ansible_distribution }}.yml'
     - '{{ ansible_os_family }}.yml'
 
 - name: Install Python
@@ -11,9 +13,15 @@
   become: true
 
 - name: Check pyenv global command
-  set_fact:
-    pyenv_command: 'pyenv global system {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
-  when: ansible_distribution_version >= '18.04'
+  block:
+    - name: On Ubuntu >= 18.04
+      set_fact:
+        pyenv_command: 'pyenv global system {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
+      when: ansible_distribution_version >= '18.04'
+    - name: On CentOS >= 8
+      set_fact:
+        pyenv_command: 'pyenv global {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
+      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
 
 - name: Install Python via pyenv
   environment:

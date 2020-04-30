@@ -12,6 +12,8 @@ platforms:
     image: centos:7
   - name: ubuntu1604
     image: ubuntu:16.04
+  - name: ubuntu2004
+    image: ubuntu:20.04
 provisioner:
   name: ansible
 scenario:

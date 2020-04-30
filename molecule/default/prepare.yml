@@ -38,6 +38,7 @@
           - make
           - libssl-dev
           - wget
+          - zlib1g-dev
         state: present
       when: ansible_distribution == 'Ubuntu'
       become: true

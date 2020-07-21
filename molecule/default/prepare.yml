@@ -10,6 +10,12 @@
       when: ansible_os_family == 'RedHat'
       become: true
 
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'
+      become: true
+
     - name: Install Git
       package: name=git state=present
 

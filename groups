@@ -2,4 +2,3 @@
 #
 d68d00a2419f8ff627fc120cf9dd9055ae422153                                                   	GitHub Replication
 e8569356a3fe6779fec68cf63a9dc4f2bbf5a069                                                   	saml/lf-gerrit-ansible-roles-python-install-committers
-ldap:cn=lf-gerrit-ansible-roles-python-install-committers,ou=Groups,dc=freestandards,dc=org	ldap/lf-gerrit-ansible-roles-python-install-committers

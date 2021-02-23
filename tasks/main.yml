@@ -16,11 +16,11 @@
   block:
     - name: On Ubuntu >= 18.04
       set_fact:
-        pyenv_command: 'pyenv global system {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
+        pyenv_command: 'pyenv global system {{ python39_version }} {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
       when: ansible_distribution_version >= '18.04'
     - name: On CentOS >= 8
       set_fact:
-        pyenv_command: 'pyenv global {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
+        pyenv_command: 'pyenv global {{ python39_version }} {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
       when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
 
 - name: Install Python via pyenv
@@ -32,6 +32,7 @@
     PYTHON36_VERSION: '{{ python36_version }}'
     PYTHON37_VERSION: '{{ python37_version }}'
     PYTHON38_VERSION: '{{ python38_version }}'
+    PYTHON39_VERSION: '{{ python39_version }}'
   block:
     - name: 'Install pyenv {{ pyenv_version }}'
       git:
@@ -49,6 +50,8 @@
       command: pyenv install -s "$PYTHON37_VERSION"
     - name: 'Install Python {{ python38_version }}'
       command: pyenv install -s "$PYTHON38_VERSION"
+    - name: 'Install Python {{ python39_version }}'
+      command: pyenv install -s "$PYTHON39_VERSION"
     - name: Set pyenv global
       command: '{{ pyenv_command }}'
   become: true

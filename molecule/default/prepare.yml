@@ -3,9 +3,14 @@
   hosts: all
   gather_facts: true
   tasks:
+    - rpm_key:
+        state: present
+        key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
+      when: ansible_os_family == 'RedHat'
+      become: true
     - name: Install Fedora EPEL repo
       yum:
-        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm
         state: present
       when: ansible_os_family == 'RedHat'
       become: true

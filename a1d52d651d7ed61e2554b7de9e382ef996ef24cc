@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Tue, 23 Feb 2021 06:13:38 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/ansible/roles/python-install/+/66854
+Project: ansible/roles/python-install
+Branch: refs/heads/master

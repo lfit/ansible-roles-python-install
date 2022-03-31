@@ -6,8 +6,8 @@ python_packages_distro:
   - python-pip
   - python-setuptools
   - python-virtualenv
-  - python36
-  - python36-devel
-  - python36-pip
-  - python36-setuptools
-  - python36-virtualenv
+  - python38
+  - python38-devel
+  - python38-pip
+  - python38-setuptools
+  - python38-virtualenv

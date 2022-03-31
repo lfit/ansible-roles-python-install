@@ -50,6 +50,7 @@
       command: pyenv install -s "$PYTHON37_VERSION"
     - name: 'Install Python {{ python38_version }}'
       command: pyenv install -s "$PYTHON38_VERSION"
+      when: ansible_distribution_major_version >= '8'
     - name: 'Install Python {{ python39_version }}'
       command: pyenv install -s "$PYTHON39_VERSION"
     - name: Set pyenv global

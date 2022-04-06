@@ -16,6 +16,29 @@
       "message": "Don\u0027t see you removing centos8 in the commit message",
       "revId": "a1d52d651d7ed61e2554b7de9e382ef996ef24cc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fe55d1f_4c108cd4",
+        "filename": "molecule/default/molecule.yml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-04-06T19:07:39Z",
+      "side": 0,
+      "message": "Why not use quay.io/centos/centos:stream8? In my testing, this seemed to work fine.",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "a1d52d651d7ed61e2554b7de9e382ef996ef24cc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80909c47_8011a05e",
+        "filename": "molecule/default/molecule.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2022-04-06T04:41:06Z",
+      "side": 0,
+      "message": "Don\u0027t see you removing centos8 in the commit message",
+      "revId": "a1d52d651d7ed61e2554b7de9e382ef996ef24cc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}

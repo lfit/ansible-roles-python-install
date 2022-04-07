@@ -22,6 +22,30 @@
       },
       "revId": "d8a9ad84cfab371bf9781281b107aa7e5ca73758",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ebdddfd_d82afc05",
+        "filename": "tox.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-04-07T07:54:40Z",
+      "side": 1,
+      "message": "Removing all the versions in the tox file breaks the tox, this is because these roles have not been updated for a while and the ansible version being used is also older. This should be collectively addressed as a separate issue for all the roles in question.",
+      "parentUuid": "16340865_91c75593",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 17
+      },
+      "revId": "d8a9ad84cfab371bf9781281b107aa7e5ca73758",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

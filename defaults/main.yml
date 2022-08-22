@@ -1,10 +1,11 @@
 ---
-pyenv_version: v1.2.23
-python34_version: 3.4.10
-python35_version: 3.5.10
-python36_version: 3.6.13
+pyenv_version: v2.3.3
 python37_version: 3.7.10
-python38_version: 3.8.7
-python39_version: 3.9.1
+python38_version: 3.8.13
+python39_version: 3.9.13
+python310_version: 3.10.6
 
-pyenv_command: 'pyenv global system {{python38_version}} {{python37_version}} {{python36_version}} {{python35_version}} {{python34_version}}'
+python_versions:
+  - '{{ python39_version }}'
+  - '{{ python38_version }}'
+  - '{{ python37_version }}'

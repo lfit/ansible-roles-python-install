@@ -1,6 +1,7 @@
 ---
 python_packages_distro:
   - libffi-dev
+  - libssl-dev
   - python
   - python-dev
   - python-openssl

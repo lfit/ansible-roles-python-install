@@ -12,46 +12,58 @@
     state: present
   become: true
 
-- name: Check pyenv global command
+- name: Pre-set python versions required for pyenv global command
   block:
-    - name: On Ubuntu >= 18.04
+    - name: "Set Python version on Ubuntu >= 18.04 or CentOS 7"
       set_fact:
-        pyenv_command: 'pyenv global system {{ python39_version }} {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
-      when: ansible_distribution_version >= '18.04'
-    - name: On CentOS >= 8
-      set_fact:
-        pyenv_command: 'pyenv global {{ python39_version }} {{ python38_version }} {{ python37_version }} {{ python36_version }} {{ python35_version }}'
-      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
+        pyenv_cmd: "{{ python_versions | join(' ') }}"
+      when:
+        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
+          (ansible_distribution == 'CentOS')
 
-- name: Install Python via pyenv
+    - name: "Set Python 3.10 on CentOS >= 8 or on Ubuntu >= 18/04"
+      set_fact:
+        pyenv_cmd: "{{ (python_versions | join(' ')) ~ ' ' ~ python310_version }}"
+      when:
+        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+
+# Ref: https://github.com/pyenv/pyenv/issues/950
+# ERROR: The Python ssl extension was not compiled. Missing the OpenSSL lib?
+# The compat-openssl libs are available only for CentOS8, so python 3.10x will
+# be available for >= CentOS8
+- name: Install SSL dependencies required pyenv for python 3.10.x
+  block:
+    - name: Update SSL dependencies for CentOS
+      command: "dnf install compat-openssl10* -y"
+      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
+  become: true
+
+- name: Install Python 3.x versions via pyenv
   environment:
     PYENV_ROOT: /opt/pyenv
     PATH: '/opt/pyenv/bin:{{ ansible_env.PATH }}'
-    PYTHON34_VERSION: '{{ python34_version }}'
-    PYTHON35_VERSION: '{{ python35_version }}'
-    PYTHON36_VERSION: '{{ python36_version }}'
-    PYTHON37_VERSION: '{{ python37_version }}'
     PYTHON38_VERSION: '{{ python38_version }}'
     PYTHON39_VERSION: '{{ python39_version }}'
+    PYTHON310_VERSION: '{{ python310_version }}'
   block:
     - name: 'Install pyenv {{ pyenv_version }}'
       git:
         repo: https://github.com/pyenv/pyenv.git
         dest: /opt/pyenv
         version: '{{ pyenv_version }}'
-    - name: 'Install Python {{ python34_version }}'
-      command: pyenv install -s "$PYTHON34_VERSION"
-      when: ansible_distribution_version < '18.04'
-    - name: 'Install Python {{ python35_version }}'
-      command: pyenv install -s "$PYTHON35_VERSION"
-    - name: 'Install Python {{ python36_version }}'
-      command: pyenv install -s "$PYTHON36_VERSION"
-    - name: 'Install Python {{ python37_version }}'
-      command: pyenv install -s "$PYTHON37_VERSION"
-    - name: 'Install Python {{ python38_version }}'
-      command: pyenv install -s "$PYTHON38_VERSION"
-    - name: 'Install Python {{ python39_version }}'
-      command: pyenv install -s "$PYTHON39_VERSION"
-    - name: Set pyenv global
-      command: '{{ pyenv_command }}'
+    - name: 'Install Python {{ pyenv_cmd }}'
+      command: 'pyenv install -s {{ item }}'
+      loop: '{{ python_versions }}'
+    - name: 'Install Python {{ python310_version }}'
+      command: 'pyenv install -s {{ python310_version }}'
+      when:
+        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+    - name: 'Set the required python 3.x versions using pyenv on Ubuntu'
+      command: 'pyenv global system {{ pyenv_cmd }}'
+      when: ansible_distribution == 'Ubuntu'
+    - name: 'Set the required python 3.x versions using pyenv on CentOS'
+      command: 'pyenv global {{ pyenv_cmd }}'
+      when: ansible_distribution == 'CentOS'
   become: true

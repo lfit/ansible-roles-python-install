@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "3821cf686a54a5632e7b78bc312c2da77ea294e2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3f5e6e8_e8e6476e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-23T01:17:11Z",
+      "side": 1,
+      "message": "We may have to ignore this until global-jj/shell/lf-env.sh is update with the fix I am working on. \n\n11:12:14     TASK [Destroy molecule instance(s)] ********************************************\n11:12:14 /w/workspace/lf-infra-ansible-roles-tox-verify-any/.tox/molecule/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.\n11:12:14   from cryptography.exceptions import InvalidSignature\n11:12:14 /w/workspace/lf-infra-ansible-roles-tox-verify-any/.tox/molecule/lib/python3.6/site-packages/requests/__init__.py:104: RequestsDependencyWarning: urllib3 (1.26.12) or chardet (5.0.0)/charset_normalizer (2.0.12) doesn\u0027t match a supported version!\n11:12:14   RequestsDependencyWarning)\n11:12:15     changed: [localhost] \u003d\u003e (item\u003dcentos7)\n11:12:15     changed: [localhost] \u003d\u003e (item\u003dcentos8)\n11:12:15     changed: [localhost] \u003d\u003e (item\u003dubuntu1804)\n11:12:15     changed: [localhost] \u003d\u003e (item\u003dubuntu2004)\n11:12:15     \n11:12:15     TASK [Wait for instance(s) deletion to complete] *******************************\n11:12:16     FAILED - RETRYING: Wait for instance(s) deletion to complete (300 retries left).\n11:12:21     changed: [localhost] \u003d\u003e (item\u003dNone)\n11:12:21     changed: [localhost] \u003d\u003e (item\u003dNone)\n11:12:21     changed: [localhost] \u003d\u003e (item\u003dNone)\n11:12:22     changed: [localhost] \u003d\u003e (",
+      "revId": "3821cf686a54a5632e7b78bc312c2da77ea294e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

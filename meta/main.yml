@@ -1,5 +1,7 @@
 ---
 galaxy_info:
+  namespace: lfit
+  role_name: python_install
   author: Linux Foundation Release Engineering
   description: Install Distro specific Python binaries + pyenv to install
     multiple versions of Python.
@@ -14,9 +16,13 @@ galaxy_info:
     - name: EL
       versions:
         - 7
+        - 8
+        - 9
+
     - name: Ubuntu
       versions:
-        - xenial
+        - bionic
+        - focal
 
   galaxy_tags:
     - pyenv

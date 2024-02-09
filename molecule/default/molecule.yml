@@ -15,6 +15,8 @@ platforms:
     image: ubuntu:18.04
   - name: ubuntu2004
     image: ubuntu:20.04
+  - name: ubuntu2204
+    image: ubuntu:22.04
 provisioner:
   name: ansible
 scenario:

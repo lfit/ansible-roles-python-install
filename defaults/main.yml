@@ -2,7 +2,8 @@
 pyenv_version: v2.3.3
 python39_version: 3.9.13
 python38_version: 3.8.13
-python310_version: 3.10.6
+python310_version: 3.10.11
+python311_version: 3.11.3
 
 python_versions:
   - '{{ python39_version }}'

@@ -3,29 +3,29 @@
   hosts: all
   gather_facts: true
   tasks:
-    - rpm_key:
+    - ansible.builtin.rpm_key:
         state: present
         key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
       when: ansible_os_family == 'RedHat'
       become: true
     - name: Install Fedora EPEL repo
-      yum:
+      ansible.builtin.yum:
         name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm
         state: present
       when: ansible_os_family == 'RedHat'
       become: true
 
     - name: Update APT cache
-      apt:
+      ansible.builtin.package:
         update_cache: yes
       when: ansible_distribution == 'Ubuntu'
       become: true
 
     - name: Install Git
-      package: name=git state=present
+      ansible.builtin.package: name=git state=present
 
     - name: Install Python compile dependencies
-      yum:
+      ansible.builtin.yum:
         name:
           - bzip2-devel
           - gcc
@@ -36,7 +36,7 @@
       become: true
 
     - name: Install Python compile dependencies
-      apt:
+      ansible.builtin.package:
         name:
           - libbz2-dev
           - gcc

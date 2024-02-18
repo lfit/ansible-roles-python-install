@@ -61,7 +61,7 @@
       ansible.builtin.command: pyenv install -s {{ python310_version }}
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '7')
     - name: 'Install Python {{ python311_version }}'  # noqa no-changed-when
       ansible.builtin.command: pyenv install -s {{ python311_version }}
       when:

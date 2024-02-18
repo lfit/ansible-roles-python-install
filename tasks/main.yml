@@ -39,6 +39,13 @@
       ansible.builtin.command: "dnf install compat-openssl10* -y"
       when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
 
+- name: Install SSL dependencies required pyenv for python 3.10.x for CentOS 7
+  become: true
+  block:
+    - name: Update SSL dependencies for CentOS 7 # noqa no-changed-when
+      ansible.builtin.command: "dnf install openssl11 openssl11-devel -y"
+      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
+
 - name: Install Python 3.x versions via pyenv
   become: true
   environment:
@@ -57,11 +64,16 @@
     - name: 'Install Python {{ pyenv_cmd }}'  # noqa no-changed-when
       ansible.builtin.command: 'pyenv install -s {{ item }}'
       loop: '{{ python_versions }}'
+    - name: 'Install Python on CentOS 7 {{ python310_version }}'  # noqa no-changed-when
+      ansible.builtin.shell: |
+        CPPFLAGS=$(pkg-config --cflags openssl11) LDFLAGS=$(pkg-config --libs openssl11) pyenv install -s {{ python310_version }}
+      when:
+        - ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
     - name: 'Install Python {{ python310_version }}'  # noqa no-changed-when
       ansible.builtin.command: pyenv install -s {{ python310_version }}
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '7')
     - name: 'Install Python {{ python311_version }}'  # noqa no-changed-when
       ansible.builtin.command: pyenv install -s {{ python311_version }}
       when:

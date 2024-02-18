@@ -11,3 +11,5 @@ python_packages_distro:
   - python36-pip
   - python36-setuptools
   - python36-virtualenv
+  - openssl11
+  - openssl11-devel

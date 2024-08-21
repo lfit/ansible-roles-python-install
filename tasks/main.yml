@@ -81,9 +81,6 @@
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
           (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
-    - name: 'Set the required python 3.x versions using pyenv on Ubuntu'  # noqa no-changed-when
-      ansible.builtin.command: 'pyenv global system {{ pyenv_cmd }}'
-      when: ansible_distribution == 'Ubuntu'
-    - name: 'Set the required python 3.x versions using pyenv on CentOS'  # noqa no-changed-when
-      ansible.builtin.command: 'pyenv global {{ pyenv_cmd }}'
-      when: ansible_distribution == 'CentOS'
+    - name: 'Set the required python 3.x versions using pyenv'
+      command: 'pyenv system {{ pyenv_cmd }}'
+  become: true

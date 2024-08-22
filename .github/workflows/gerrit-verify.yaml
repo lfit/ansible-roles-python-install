@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clear votes
-        uses: lfit/gerrit-review-action@v0.3
+        uses: lfit/gerrit-review-action@a0115e91da9d0b5df16f37a54ba147456993618f # v0.8
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}
@@ -67,7 +67,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: lfit/checkout-gerrit-change-action@v0.4
+      - uses: lfit/checkout-gerrit-change-action@4a0f945be549fa62f3bed97759fb4a0b231acb51 # v0.9
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           delay: "0s"
@@ -84,13 +84,13 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: lfit/checkout-gerrit-change-action@v0.4
+      - uses: lfit/checkout-gerrit-change-action@4a0f945be549fa62f3bed97759fb4a0b231acb51 # v0.9
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           delay: "0s"
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: "3.9"
       - name: Run static analysis and format checkers
         run: pipx run pre-commit run --all-files --show-diff-on-failure
 
@@ -110,7 +110,7 @@ jobs:
     steps:
       - name: Gerrit Checkout
         # yamllint disable-line rule:line-length
-        uses: lfit/checkout-gerrit-change-action@70360ca2f8bee3e6a15224d8a03f8e017b1ac91f # v0.4
+        uses: lfit/checkout-gerrit-change-action@4a0f945be549fa62f3bed97759fb4a0b231acb51 # v0.9
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           delay: "0s"
@@ -137,9 +137,9 @@ jobs:
       ]
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/workflow-conclusion-action@v3
+      - uses: im-open/workflow-conclusion@e4f7c4980600fbe0818173e30931d3550801b992  # v2.2.3
       - name: Set vote
-        uses: lfit/gerrit-review-action@v0.3
+        uses: lfit/gerrit-review-action@a0115e91da9d0b5df16f37a54ba147456993618f # v0.8
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}

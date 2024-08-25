@@ -6,11 +6,31 @@
     - '{{ ansible_distribution }}.yml'
     - '{{ ansible_os_family }}.yml'
 
+- name: Re-configure yum repositories for CentOS 7 and 8 to point to vault
+  become: true
+  when:
+    - (ansible_distribution == 'CentOS' and ansible_distribution_major_version == '8') or
+      (ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7')
+  block:
+    - name: Disable default CentOS mirrors (backup original)
+      ansible.builtin.lineinfile:
+        path: /etc/yum.repos.d/CentOS-*
+        regexp: '^mirrorlist'
+        replace: '#mirrorlist'
+        backup: yes
+
+    - name: Update CentOS mirrors to vault.centos.org (backup original)
+      ansible.builtin.lineinfile:
+        path: /etc/yum.repos.d/CentOS-*
+        regexp: '^baseurl=http://mirror.centos.org'
+        replace: 'baseurl=http://vault.centos.org'
+        backup: yes
+
 - name: Install Python
+  become: true
   ansible.builtin.package:
     name: '{{ python_packages }}'
     state: present
-  become: true
 
 - name: Pre-set python versions required for pyenv global command
   block:

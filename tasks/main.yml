@@ -7,10 +7,10 @@
     - '{{ ansible_os_family }}.yml'
 
 - name: Install Python
+  become: true
   ansible.builtin.package:
     name: '{{ python_packages }}'
     state: present
-  become: true
 
 - name: Pre-set python versions required for pyenv global command
   block:

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d8c408_4e28cad0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2024-08-26T17:59:56Z",
+      "side": 1,
+      "message": "I think that this is a good change, and necessary. But it also won\u0027t fix the molecule tests, just to be clear. The action will run them correctly, and we should see some successes, but CentOS 7 will still fail, at a minimum.",
+      "revId": "b4647d0dfc8119bb137ef2114b8c394697168dc3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}

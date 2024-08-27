@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f93f43b4_2f9f184e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-08-27T07:48:54Z",
+      "side": 1,
+      "message": "I see some changes updates are missing, and the Python updates! Matt if you could rebase your change on top of https://gerrit.linuxfoundation.org/infra/c/ansible/roles/python-install/+/73149! both can get merged, however, we still need to wait for the benevolent dictator\u0027s override. 😜",
+      "revId": "fed754bb20c61de1ca2311fbb3df4ef4c360d106",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}

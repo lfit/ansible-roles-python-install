@@ -33,6 +33,23 @@
       "message": "This duplicate looks like it partially duplicates the one I posted into the releng channel earlier?\nhttps://gerrit.linuxfoundation.org/infra/c/ansible/roles/python-install/+/73147\nWant to consolidate any differences onto this one and I\u0027ll close mine?",
       "revId": "b4647d0dfc8119bb137ef2114b8c394697168dc3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1524cbbe_47e3e4c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-08-28T00:59:54Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "b4647d0dfc8119bb137ef2114b8c394697168dc3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

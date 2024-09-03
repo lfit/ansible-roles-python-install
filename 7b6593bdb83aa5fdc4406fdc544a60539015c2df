@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "751f47d3_91d560db",
+        "filename": ".github/workflows/gerrit-verify.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-09-03T22:13:09Z",
+      "side": 1,
+      "message": "This workflow is a gerrit triggered workflow. This input should not exist.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "7b6593bdb83aa5fdc4406fdc544a60539015c2df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "51293fa7_c40b13e9",

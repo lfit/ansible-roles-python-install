@@ -57,6 +57,7 @@
     PYTHON39_VERSION: '{{ python39_version }}'
     PYTHON310_VERSION: '{{ python310_version }}'
     PYTHON311_VERSION: '{{ python311_version }}'
+    PYTHON312_VERSION: '{{ python312_version }}'
   block:
     - name: 'Install pyenv {{ pyenv_version }}'
       ansible.builtin.git:
@@ -81,5 +82,9 @@
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
           (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
-    - name: 'Set the required python 3.x versions using pyenv'  # noqa no-changed-when
+    - name: 'Set the required python 3.x versions using pyenv on Ubuntu'  # noqa no-changed-when
+      ansible.builtin.command: 'pyenv global system {{ pyenv_cmd }}'
+      when: ansible_distribution == 'Ubuntu'
+    - name: 'Set the required python 3.x versions using pyenv on CentOS'  # noqa no-changed-when
       ansible.builtin.command: 'pyenv global {{ pyenv_cmd }}'
+      when: ansible_distribution == 'CentOS'

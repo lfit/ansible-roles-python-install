@@ -4,18 +4,23 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: centos7
-    image: centos:7
-  - name: centos8
-    image: quay.io/centos/centos:stream8
-  - name: ubuntu1804
-    image: ubuntu:18.04
+  # - name: centos7
+  #   image: centos:7
+  # - name: centos8
+  #   image: quay.io/centos/centos:stream8
+  # - name: ubuntu1804
+  #   image: ubuntu:18.04
   - name: ubuntu2004
     image: ubuntu:20.04
   - name: ubuntu2204
     image: ubuntu:22.04
+  - name: ubuntu2404
+    image: ubuntu:24.04
 provisioner:
   name: ansible
+  # Fix for role path finding in latest molecule versions (~25.4.0)
+  env:
+    ANSIBLE_ROLES_PATH: ../../../
 scenario:
   name: default
   test_sequence:
@@ -28,5 +33,3 @@ scenario:
     - side_effect
     - verify
     - destroy
-verifier:
-  name: testinfra

@@ -12,21 +12,12 @@
     name: '{{ python_packages }}'
     state: present
 
-- name: Pre-set python versions required for pyenv global command
-  block:
-    - name: "Set Python version on Ubuntu >= 18.04 or CentOS 7"
-      ansible.builtin.set_fact:
-        pyenv_cmd: "{{ python_versions | join(' ') }}"
-      when:
-        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS')
-
-    - name: "Set Python 3.10 on CentOS >= 8 or on Ubuntu >= 18/04"
-      ansible.builtin.set_fact:
-        pyenv_cmd: "{{ (python_versions | join(' ')) ~ ' ' ~ python310_version ~ ' ' ~ python311_version }}"
-      when:
-        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+- name: Set Python version on Ubuntu >= 18.04 or CentOS 7
+  ansible.builtin.set_fact:
+    pyenv_cmd: "{{ python_versions | join(' ') }}"
+  when:
+    - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
+      (ansible_distribution == 'CentOS')
 
 # Ref: https://github.com/pyenv/pyenv/issues/950
 # ERROR: The Python ssl extension was not compiled. Missing the OpenSSL lib?

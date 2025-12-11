@@ -1,6 +1,5 @@
 ---
-# CentOS Stream 9 uses Python 3.9+ as default
-# No python36, python38, or openssl11 packages available
+# CentOS 9 uses Python 3.9+ as default
 # python3-virtualenv from EPEL has broken deps; install via pip instead
 python_packages_distro:
   - libffi-devel

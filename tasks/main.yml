@@ -21,32 +21,12 @@
   when:
     - ansible_distribution == 'CentOS' and ansible_distribution_major_version | int >= 9
 
-- name: Set Python version on Ubuntu >= 18.04 or CentOS 7
+- name: Set Python version on Ubuntu >= 22.04 or CentOS 9
   ansible.builtin.set_fact:
     pyenv_cmd: "{{ python_versions | join(' ') }}"
   when:
-    - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-      (ansible_distribution == 'CentOS')
-
-# Ref: https://github.com/pyenv/pyenv/issues/950
-# ERROR: The Python ssl extension was not compiled. Missing the OpenSSL lib?
-# The compat-openssl libs are available only for CentOS8, so python 3.10x will
-# be available for >= CentOS8
-- name: Install SSL dependencies required pyenv for python 3.10.x
-  become: true
-  block:
-    - name: Update SSL dependencies for CentOS  # noqa no-changed-when
-      ansible.builtin.command: "dnf install compat-openssl10* -y"
-      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8'
-
-    - name: Install SSL dependencies required pyenv for python 3.10.x for CentOS 7  # noqa no-changed-when
-      when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
-      ansible.builtin.yum:
-        name:
-          - openssl11
-          - openssl11-devel
-        update_cache: yes
-        state: present
+    - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '22.04') or
+      (ansible_distribution == 'CentOS' and ansible_distribution_major_version | int >= 9)
 
 - name: Install Python 3.x versions via pyenv
   become: true
@@ -71,20 +51,11 @@
       changed_when: "'already installed' not in pyenv_install_result.stdout"
       tags:
         - molecule-idempotence-notest
-    - name: 'Install Python on CentOS 7 {{ python310_version }}'
-      ansible.builtin.shell: |
-        CPPFLAGS=$(pkg-config --cflags openssl11) LDFLAGS=$(pkg-config --libs openssl11) pyenv install -s {{ python310_version }}
-      when:
-        - ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
-      register: pyenv_centos7_result
-      changed_when: "'already installed' not in pyenv_centos7_result.stdout"
-      tags:
-        - molecule-idempotence-notest
     - name: 'Install Python {{ python310_version }}'
       ansible.builtin.command: pyenv install -s {{ python310_version }}
       when:
-        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '7')
+        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '22.04') or
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version | int >= 9)
       register: pyenv310_result
       changed_when: "'already installed' not in pyenv310_result.stdout"
       tags:
@@ -92,8 +63,8 @@
     - name: 'Install Python {{ python311_version }}'
       ansible.builtin.command: pyenv install -s {{ python311_version }}
       when:
-        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
-          (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
+        - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '22.04') or
+          (ansible_distribution == 'CentOS' and ansible_distribution_major_version | int >= 9)
       register: pyenv311_result
       changed_when: "'already installed' not in pyenv311_result.stdout"
       tags:

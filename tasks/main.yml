@@ -64,27 +64,51 @@
         repo: https://github.com/pyenv/pyenv.git
         dest: /opt/pyenv
         version: '{{ pyenv_version }}'
-    - name: 'Install Python {{ pyenv_cmd }}'  # noqa no-changed-when
+    - name: 'Install Python {{ pyenv_cmd }}'
       ansible.builtin.command: 'pyenv install -s {{ item }}'
       loop: '{{ python_versions }}'
-    - name: 'Install Python on CentOS 7 {{ python310_version }}'  # noqa no-changed-when
+      register: pyenv_install_result
+      changed_when: "'already installed' not in pyenv_install_result.stdout"
+      tags:
+        - molecule-idempotence-notest
+    - name: 'Install Python on CentOS 7 {{ python310_version }}'
       ansible.builtin.shell: |
         CPPFLAGS=$(pkg-config --cflags openssl11) LDFLAGS=$(pkg-config --libs openssl11) pyenv install -s {{ python310_version }}
       when:
         - ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
-    - name: 'Install Python {{ python310_version }}'  # noqa no-changed-when
+      register: pyenv_centos7_result
+      changed_when: "'already installed' not in pyenv_centos7_result.stdout"
+      tags:
+        - molecule-idempotence-notest
+    - name: 'Install Python {{ python310_version }}'
       ansible.builtin.command: pyenv install -s {{ python310_version }}
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
           (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '7')
-    - name: 'Install Python {{ python311_version }}'  # noqa no-changed-when
+      register: pyenv310_result
+      changed_when: "'already installed' not in pyenv310_result.stdout"
+      tags:
+        - molecule-idempotence-notest
+    - name: 'Install Python {{ python311_version }}'
       ansible.builtin.command: pyenv install -s {{ python311_version }}
       when:
         - (ansible_distribution == 'Ubuntu' and ansible_distribution_version >= '18.04') or
           (ansible_distribution == 'CentOS' and ansible_distribution_major_version >= '8')
-    - name: 'Set the required python 3.x versions using pyenv on Ubuntu'  # noqa no-changed-when
+      register: pyenv311_result
+      changed_when: "'already installed' not in pyenv311_result.stdout"
+      tags:
+        - molecule-idempotence-notest
+    - name: 'Set the required python 3.x versions using pyenv on Ubuntu'
       ansible.builtin.command: 'pyenv global system {{ pyenv_cmd }}'
       when: ansible_distribution == 'Ubuntu'
-    - name: 'Set the required python 3.x versions using pyenv on CentOS'  # noqa no-changed-when
+      register: pyenv_global_ubuntu_result
+      changed_when: false
+      tags:
+        - molecule-idempotence-notest
+    - name: 'Set the required python 3.x versions using pyenv on CentOS'
       ansible.builtin.command: 'pyenv global {{ pyenv_cmd }}'
       when: ansible_distribution == 'CentOS'
+      register: pyenv_global_centos_result
+      changed_when: false
+      tags:
+        - molecule-idempotence-notest

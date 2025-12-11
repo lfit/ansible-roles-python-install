@@ -12,6 +12,15 @@
     name: '{{ python_packages }}'
     state: present
 
+- name: Install virtualenv via pip on EL9 (broken RPM deps)
+  become: true
+  ansible.builtin.pip:
+    name: virtualenv
+    state: present
+    executable: pip3
+  when:
+    - ansible_distribution == 'CentOS' and ansible_distribution_major_version | int >= 9
+
 - name: Set Python version on Ubuntu >= 18.04 or CentOS 7
   ansible.builtin.set_fact:
     pyenv_cmd: "{{ python_versions | join(' ') }}"

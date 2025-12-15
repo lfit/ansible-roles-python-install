@@ -2,8 +2,16 @@
 # CentOS 9 uses Python 3.9+ as default
 # python3-virtualenv from EPEL has broken deps; install via pip instead
 python_packages_distro:
+  - bzip2-devel
   - libffi-devel
+  - ncurses-devel
+  - openssl-devel
   - python3
   - python3-devel
   - python3-pip
   - python3-setuptools
+  - readline-devel
+  - sqlite-devel
+  - tk-devel
+  - xz-devel
+  - zlib-devel

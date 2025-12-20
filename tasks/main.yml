@@ -71,14 +71,18 @@
         - molecule-idempotence-notest
     - name: 'Set the required python 3.x versions using pyenv on Ubuntu'
       ansible.builtin.command: 'pyenv global system {{ pyenv_cmd }}'
-      when: ansible_distribution == 'Ubuntu'
+      when:
+        - ansible_facts['distribution'] == 'Ubuntu'
+        - ansible_facts['distribution_version'] is version('22.04', '>=')
       register: pyenv_global_ubuntu_result
       changed_when: false
       tags:
         - molecule-idempotence-notest
     - name: 'Set the required python 3.x versions using pyenv on CentOS'
       ansible.builtin.command: 'pyenv global {{ pyenv_cmd }}'
-      when: ansible_distribution == 'CentOS'
+      when:
+        - ansible_facts['distribution'] == 'CentOS'
+        - ansible_facts['distribution_major_version'] | int >= 9
       register: pyenv_global_centos_result
       changed_when: false
       tags:

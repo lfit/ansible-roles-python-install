@@ -1,0 +1,8 @@
+Verified+1: LFIT GitHub-Gerrit <releng+github-lfit-gerrit@linuxfoundation.org>
+Verified+1: LFIT Required GHA <releng+lfit-required-gha@linuxfoundation.org>
+Code-Review+2: Matthew Watkins <mwatkins@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Mon, 16 Nov 2026 22:48:48 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/ansible/roles/python-install/+/74820
+Project: ansible/roles/python-install
+Branch: refs/heads/master
